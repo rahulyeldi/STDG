@@ -1,9 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from notebooks.pipeline import generate_synthetic_series
+from timeseries.notebooks.pipeline import generate_synthetic_series
 
 # CONFIG
-CSV_PATH = "./data/AirPassengers.csv"
+CSV_PATH = "timeseries/data/AirPassengers.csv"
 DATE_COL = "Month"
 VALUE_COL = "#Passengers"
 GENERATOR_NAME = "bootstrapping"
@@ -34,7 +34,7 @@ synthetic_series = generate_synthetic_series(
 )
 
 # save output
-output_path = "./data/synthetic_output.csv"
+output_path = "timeseries/data/synthetic_output.csv"
 synthetic_series.to_csv(output_path, header=[f"{VALUE_COL}_synthetic"])
 
 # plot results

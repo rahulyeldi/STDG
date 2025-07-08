@@ -1,12 +1,12 @@
 import pandas as pd
-from notebooks.generators import generate_synthetic_decomposition, generate_synthetic_bootstrapping
-from notebooks.transformations import apply_all_transformations
+from timeseries.notebooks.generators import generate_synthetic_method1, generate_synthetic_method2_bootstrap
+from timeseries.notebooks.transformations import apply_all_transformations
 
 
 # Generator Method Registry
 GENERATOR_REGISTRY = {
-    "decomposition": generate_synthetic_decomposition,
-    "bootstrapping": generate_synthetic_bootstrapping,
+    "decomposition": generate_synthetic_method1,
+    "bootstrapping": generate_synthetic_method2_bootstrap,
 }
 
 
@@ -35,8 +35,8 @@ def generate_synthetic_series(
         transformation_params (dict): Optional transformation config:
             {
                 "method": "shift_scale",
-                "scale_factor": 1.5,
-                "shift_value": 10
+                "scale_factor": value,
+                "shift_value": value
             }
 
     Returns:

@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from statsmodels.tsa.seasonal import seasonal_decompose
-from notebooks.transformations import apply_all_transformations
+from timeseries.notebooks.transformations import apply_all_transformations
 
 
 # decomposition utility
